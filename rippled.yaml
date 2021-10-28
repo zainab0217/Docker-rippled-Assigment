@@ -1,0 +1,15 @@
+replicaCount: 1
+image:
+  repository: dockerrippled
+  tag: 0.80.0
+  pullPolicy: IfNotPresent
+service:
+  name: rippled
+  type: ClusterIP
+  externalPort: 8080
+  internalPort: 8080
+ingress:
+  enabled: false
+  hosts:
+    - rippled.local
+ 
