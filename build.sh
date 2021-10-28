@@ -8,7 +8,7 @@ self(){
 echo "Stopping containers"
 docker ps -a|grep dockerrippled:latest|cut -d " " -f 1 |xargs -I__ docker stop __
 
-if [[ $(docker images -a|grep xrpllabsofficial/xrpld:latest|wc -l) -gt "0" ]]; then
+if [[ $(docker images -a|grep dockerrippled:latest|wc -l) -gt "0" ]]; then
   echo "Removing image"
   docker rmi -f dockerrippled:latest
 fi
